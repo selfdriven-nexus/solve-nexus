@@ -328,6 +328,7 @@ h1 em,h2 em{font-style:normal;color:var(--orange)}
 /* Orange banner action */
 .custom-banner .button{margin-top:4px}
 .custom-banner .banner-copy p{margin-bottom:22px}
+.custom-banner .banner-copy p:last-child{margin-bottom:0}
 
 /* Content-page prev / next */
 .prose .crumb+h2{margin-top:0;padding-top:0;border-top:0}
