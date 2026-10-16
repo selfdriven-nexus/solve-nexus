@@ -1,4 +1,4 @@
-/* selfdriven.institute — shares the selfdriven.healthcare look: split hero, stats strip, tile grid, dark layers panel, orange banner, ink footer */
+/* solve.nexus — shares the selfdriven.institute look: split hero, stats strip, tile grid, dark layers panel, orange banner, ink footer */
 :root{
 	--paper:#ffffff;
 	--surface:#f6f5f7;
@@ -362,3 +362,49 @@ h1 em,h2 em{font-style:normal;color:var(--orange)}
 	.sd-share-card{padding:24px 20px}
 }
 .scope-head p+p{margin-top:14px}
+
+/* ═══ solve.nexus additions ═══════════════════════════════════════ */
+
+/* Wordmark (header and footer) */
+.wordmark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:-.045em;line-height:1;color:var(--ink)}
+.wordmark:hover{color:var(--ink)}
+.wordmark b{font-weight:600;color:var(--orange)}
+.logo.wordmark img,.footer-left .wordmark img{width:34px;height:34px;border-radius:50%;flex:0 0 auto}
+.footer .wordmark{display:inline-flex;color:#ffffff;font-size:1.3rem;margin:0}
+.footer .wordmark:hover{color:#ffffff}
+.footer .wordmark b{color:var(--orange-on-dark)}
+.footer-left .wordmark img{width:30px;height:30px}
+
+/* Hero panel: the solving loop */
+.trinity-tag{fill:#ffffff;opacity:.75;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em}
+.loop-arc{fill:none;stroke:#ffffff;stroke-width:1.5;stroke-dasharray:4 6;opacity:.45}
+.loop-head{fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.6}
+
+/* Five-step loop in the dark panel */
+.layer-list.five{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.loop-note{margin:34px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);font-family:var(--font-display);font-size:1.1rem;font-weight:500;letter-spacing:-.02em;color:#ffffff}
+.loop-note span{color:var(--orange-on-dark);margin-right:6px}
+
+/* Scales: individual to civilisation */
+.scales{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.scale{min-width:0;border-top:1px solid var(--line);padding-top:22px}
+.scale-mark{display:block;width:56px;height:56px;margin:0 0 18px;overflow:visible}
+.scale-mark rect{fill:none;stroke:var(--muted);stroke-width:1.5;opacity:.45}
+.scale-mark rect.on{stroke:var(--orange);stroke-width:2.5;opacity:1}
+.scale .layer-step{color:var(--orange)}
+.scale h3{margin:10px 0 8px;font-size:1.3rem}
+.scale p{font-size:15px;color:var(--muted);margin:0}
+
+@media(max-width:1100px){
+	.layer-list.five{grid-template-columns:repeat(3,minmax(0,1fr))}
+	.scales{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:34px}
+}
+@media(max-width:760px){
+	.wordmark{font-size:1.3rem}
+	.layer-list.five{grid-template-columns:1fr}
+	.scales{grid-template-columns:1fr;row-gap:26px}
+	.scale{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:18px;align-items:start}
+	.scale-mark{grid-row:span 3;margin:0}
+	.scale .layer-step,.scale h3,.scale p{grid-column:2}
+	.scale h3{margin:6px 0 6px}
+}
